@@ -11,6 +11,9 @@ Template.postSubmit.events({
 			if(error){
 				return alert(error.reason);
 			}
+			if(result.postExists){
+				alert('改链接已经存在');
+			}
 			Router.go('postPage',{_id:result._id});
 		});
 	}
