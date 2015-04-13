@@ -5,6 +5,7 @@
     </div>
     <p>
         提交者{{author}}
+        <a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a>
         {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">编辑</a>{{/if}}
     </p>
     <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss</a>

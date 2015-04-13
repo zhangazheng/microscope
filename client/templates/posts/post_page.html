@@ -1,5 +1,13 @@
 <template name="postPage">
-  <div class="post-page page">
     {{> postItem}}
-  </div>
+    <ul class="comments">
+        {{#each comments}}
+            {{> commentItem}}
+        {{/each}}
+    </ul>
+    {{#if currentUser}}
+        {{> commentSubmit}}
+    {{else}}
+        <p>登录后才能评论.</p>
+    {{/if}}
 </template>
