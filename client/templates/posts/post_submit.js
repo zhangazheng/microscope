@@ -25,10 +25,10 @@ Template.postSubmit.events({
         Meteor.call('postInsert', post, function (error, result) {
             //显示错误信息并退出
             if (error) {
-                return throwError(error.reason);
+                return Errors.throw(error.reason);
             }
             if (result.postExists) {
-                throwError('该链接已经存在');
+                Errors.throw('该链接已经存在');
             }
             Router.go('postPage', {_id: result._id});
         });
